@@ -1,4 +1,3 @@
-```markdown
 # Hacker News Article Sorting Validator
 
 This project contains two scripts, `extracredit.js` and `index.js`, created for validating the sorting of articles on Hacker News. The scripts use [Playwright](https://playwright.dev/) for web scraping and automate the browser to test whether articles are ordered from newest to oldest.
