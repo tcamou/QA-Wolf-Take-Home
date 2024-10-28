@@ -63,4 +63,3 @@ This script automatically validates 100 articles from the `newest` section of Ha
 To extend functionality, you may consider:
 - **Custom Logging**: Capture browser console output, test errors, and details of each test case.
 - **HTML Reports**: Use `mochawesome` or `jest-html-reporter` to generate reports with test details.
-```
