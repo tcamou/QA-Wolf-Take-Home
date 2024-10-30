@@ -12,6 +12,7 @@ const getopt = new Getopt([
     ['n', 'numArticles=ARG', 'specify number of articles to validate', '100'],
     ['u', 'url=ARG', 'specify URL of page on which to begin validation', 'https://news.ycombinator.com/newest'],
     ['t', 'title', 'extract titles of articles', false],
+    ['', 'headless', 'enable headless mode', false],
     ['v', 'verbose', 'enable verbose output', false],
     ['h', 'help', 'display this help']
 ]).bindHelp();
@@ -32,11 +33,12 @@ if (!urlRegex.test(url)) {
     console.log('ERROR: Invalid URL Format: url must be on the ycombinator.com domain');
 }
 const getTitles = opt.options.title;
+const headlessFlag = opt.options.headless;
 const verbose = opt.options.verbose;
 
 async function sortHackerNewsArticles() {
   // launch browser (headless for tests to run in background)
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ headless: headlessFlag });
   const context = await browser.newContext();
   const page = await context.newPage();
 
